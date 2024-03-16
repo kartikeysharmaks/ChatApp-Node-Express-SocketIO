@@ -7,7 +7,7 @@ Now to run the project use command - node index.js.
 
 ### Cors configuration for running  on local device, update this/ 
 
-`const corsOptions = {
+```const corsOptions = {
   origin: "https://chat-app-react-socket-io-tailwind-css.vercel.app",
   credentials: true,
 };
@@ -16,16 +16,16 @@ const socketIO = require("socket.io")(http, {
   cors :{
     origin : "https://chat-app-react-socket-io-tailwind-css.vercel.app"
   }
-});`
+});```
 
 with/
 
-`app.use(cors());
+```app.use(cors());
 const socketIO = require("socket.io")(http, {
   cors :{
     origin : "http://localhost:3000/"
   }
-});`
+});```
 
 ## NOTE : Keep both projects running simultaneously
 Link for frontend Git Repo - [https://github.com/kartikeysharmaks/ChatApp-React-SocketIO-TailwindCSS](https://github.com/kartikeysharmaks/ChatApp-React-SocketIO-TailwindCSS)
