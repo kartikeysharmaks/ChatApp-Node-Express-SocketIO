@@ -9,10 +9,7 @@ const corsOptions = {
   origin: "https://chat-app-react-socket-io-tailwind-css.vercel.app",
   credentials: true,
 };
-
 app.use(cors(corsOptions));
-
-app.use(cors());
 const socketIO = require("socket.io")(http, {
   cors :{
     origin : "https://chat-app-react-socket-io-tailwind-css.vercel.app"
@@ -43,7 +40,7 @@ socketIO.on('connection', (socket) => {
   
   //Listens when a user disconnect
   socket.on('disconnect', () => {
-    console.log('🔥: A user disconnected');
+    console.log(`${socket.id} user just disconnected`);
     //Updates the list of users when a user disconnects from the server
     users = users.filter((user) => user.socketID !== socket.id);
     //Sends the list of users to the client
