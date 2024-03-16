@@ -7,14 +7,17 @@ const cors = require("cors");
 
 const corsOptions = {
   origin: "https://chat-app-react-socket-io-tailwind-css.vercel.app",
-  methods: ["GET", "POST"],
   credentials: true,
 };
 
 app.use(cors(corsOptions));
 
 app.use(cors());
-const socketIO = require("socket.io")(http, {});
+const socketIO = require("socket.io")(http, {
+  cors :{
+    origin : "https://chat-app-react-socket-io-tailwind-css.vercel.app"
+  }
+});
 
 //Initially we have zero users
 let users = [];
